@@ -18,5 +18,11 @@
          <artifactId>activemq-all</artifactId> 
          <version>5.9.0</version>
     </dependency>
+    <dependency>  
+         <groupId>org.apache.xbean</groupId>  
+         <artifactId>xbean-spring</artifactId> 
+         <version>3.16</version>
+    </dependency>
+    
   </dependencies>
 </project>
