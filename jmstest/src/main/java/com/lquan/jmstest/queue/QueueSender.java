@@ -29,10 +29,11 @@ public class QueueSender {
 		Session session = connection.createSession(Boolean.TRUE, Session.AUTO_ACKNOWLEDGE);
 		// 创建一个发送消息的目的地
 		Destination destination = session.createQueue("my-queue");
+		
 		// 创建一个消息发送者
 		MessageProducer producer = session.createProducer(destination);
 		for(int i=0;i<3;i++) {
-			// 创建消息
+			// 创建消息  JMS提供了5中消息题格式 TextMessage、MapMessage、BytesMessage、StreamMessage和ObjectMessage
 			TextMessage message = session.createTextMessage("message---"+i);
 			Thread.sleep(1000);
 			// 通过生产者发送消息
