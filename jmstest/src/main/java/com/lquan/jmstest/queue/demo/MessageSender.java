@@ -24,6 +24,9 @@ public class MessageSender {
     public static final String BROKER_URL = "tcp://112.125.90.15:61616";
     // 目标，在ActiveMQ管理员控制台创建 http://localhost:8161/admin/queues.jsp
     public static final String DESTINATION = "lquan.mq.queue";
+    public static final String user = "system";
+   // public static final String passwd = "readwrite";
+    public static final String passwd ="system";
 
     /**
      * <b>function:</b> 发送消息
@@ -48,7 +51,7 @@ public class MessageSender {
         Session session = null;
         try {
             // 创建链接工厂
-            ConnectionFactory factory = new ActiveMQConnectionFactory(ActiveMQConnection.DEFAULT_USER, ActiveMQConnection.DEFAULT_PASSWORD, BROKER_URL);
+            ConnectionFactory factory = new ActiveMQConnectionFactory(user, passwd, BROKER_URL);
             // 通过工厂创建一个连接
             connection = factory.createConnection();
             // 启动连接
