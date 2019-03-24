@@ -1,4 +1,4 @@
-package com.lquan.jmstest.queue;
+package com.lquan.jmstest.queue.demo;
 
 import javax.jms.Connection;
 import javax.jms.ConnectionFactory;

@@ -33,7 +33,7 @@ public class QueueReceiver {
 		for(int i=0;i<3;i++) {
 			TextMessage message = (TextMessage) consumer.receive();
 			session.commit();
-			System.out.println("收到消息:"+message.getText());
+			System.out.println("收到消息:"+message.getText()+"|*****|"+message.getStringProperty("name"));
 		}
 		
 		// 关闭会话

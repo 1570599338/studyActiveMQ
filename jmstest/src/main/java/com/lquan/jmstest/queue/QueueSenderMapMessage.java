@@ -3,6 +3,7 @@ package com.lquan.jmstest.queue;
 import javax.jms.Connection;
 import javax.jms.ConnectionFactory;
 import javax.jms.Destination;
+import javax.jms.MapMessage;
 import javax.jms.MessageProducer;
 import javax.jms.Session;
 import javax.jms.TextMessage;
@@ -14,7 +15,7 @@ import org.apache.activemq.ActiveMQConnectionFactory;
  * @author lquan
  *
  */
-public class QueueSender {
+public class QueueSenderMapMessage {
 
 	public static void main(String[] args) throws Exception {
 		
@@ -33,7 +34,9 @@ public class QueueSender {
 		MessageProducer producer = session.createProducer(destination);
 		for(int i=0;i<3;i++) {
 			// 创建消息  JMS提供了5中消息题格式 TextMessage、MapMessage、BytesMessage、StreamMessage和ObjectMessage
-			TextMessage message = session.createTextMessage("message---"+i);
+			MapMessage message = session.createMapMessage();
+			message.setString("key"+i, "value==="+i);
+			// 附加属性
 			message.setStringProperty("name", "lquan---"+i);
 			Thread.sleep(1000);
 			// 通过生产者发送消息
