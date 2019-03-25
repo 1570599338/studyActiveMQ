@@ -3,11 +3,7 @@ package com.lquan.jmstest.queue;
 import javax.jms.Connection;
 import javax.jms.ConnectionFactory;
 import javax.jms.Destination;
-import javax.jms.JMSException;
-import javax.jms.Message;
 import javax.jms.MessageConsumer;
-import javax.jms.MessageListener;
-import javax.jms.MessageProducer;
 import javax.jms.Session;
 import javax.jms.TextMessage;
 
@@ -37,7 +33,7 @@ public class QueueReceiver {
 		for(int i=0;i<3;i++) {
 			TextMessage message = (TextMessage) consumer.receive();
 			session.commit();
-			System.out.println("收到消息:"+message.getText());
+			System.out.println("收到消息:"+message.getText()+"|*****|"+message.getStringProperty("name"));
 		}
 		
 		// 关闭会话
