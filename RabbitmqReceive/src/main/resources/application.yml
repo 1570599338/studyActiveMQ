@@ -2,3 +2,13 @@ server:
   servlet:
     context-path: /
   port: 8081
+spring:
+  rabbitmq:
+    addresses: 192.168.1.112
+    username: lquan
+    password: lquan
+    virtual-host: /test
+    port: 5672
+
+logging:
+    config: classpath:logback.xml
