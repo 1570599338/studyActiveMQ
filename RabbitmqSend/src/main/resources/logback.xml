@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true">
+    <property name="CONSOLE_LOG_PATTERN" value="%d{yyyy-MM-dd HH\:mm\:ss\:SSS} %5p [%X{log_id}] [%t] [%F\:%L] - %m%n"/>
+    <property name="FILE_LOG_PATTERN" value="%d{yyyy-MM-dd HH\:mm\:ss\:SSS} %5p [%X{log_id}] [%t] [%F\:%L] - %m%n"/>
+
+    <property name="LOG_PATH" value="/www/webcode/logs/ops"/>
+    <property name="LOG_FILE" value="ops.log"/>
+    <!--<logger name="org.springframework.data.redis.core" level="DEBUG"/>-->
+    <logger name="org.apache.ibatis" level="DEBUG"/>
+    <logger name="org.springframework" level="INFO"/>
+    <logger name="com.alibaba.dubbo" level="INFO"/>
+    <logger name="org.apache.zookeeper" level="INFO"/>
+    <logger name="org.mybatis" level="DEBUG"/>
+    <logger name="org.ibatis" level="DEBUG"/>
+    <logger name="com.jfbank.wallet" level="DEBUG"/>
+    <logger name="ch.qos.logback" level="DEBUG"/>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+    </appender>
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+        <!--<Prudent>true</Prudent>-->
+        <file>${LOG_PATH}/${LOG_FILE}</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_PATH}/${LOG_FILE}.%d{yyyy-MM-dd}</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <!--<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <MaxFileSize>1000MB</MaxFileSize>
+        </triggeringPolicy>-->
+    </appender>
+
+    <root level="INFO">
+        <!--<appender-ref ref="CONSOLE" />-->
+        <appender-ref ref="CONSOLE" />
+    </root>
+</configuration>

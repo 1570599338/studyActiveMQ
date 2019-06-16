@@ -9,20 +9,63 @@
 
 
   <modules>
-  	<module>jmstest</module>
+      <module>mqcommon</module>
+      <module>RabbitmqSend</module>
+      <module>RabbitmqReceive</module>
   </modules>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.5.RELEASE</version>
+    </parent>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <apollo-client>1.0.1</apollo-client>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <!--<parent>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-starter-parent</artifactId>-->
+        <!--<version>2.0.3.RELEASE</version>-->
+    <!--</parent>-->
   
   <dependencies>
-  	<dependency>  
-         <groupId>org.apache.activemq</groupId>  
-         <artifactId>activemq-all</artifactId> 
-         <version>5.9.0</version>
-    </dependency>
-    <dependency>  
-         <groupId>org.apache.xbean</groupId>  
-         <artifactId>xbean-spring</artifactId> 
-         <version>3.16</version>
-    </dependency>
-    
+  	<!--<dependency>-->
+         <!--<groupId>org.apache.activemq</groupId>  -->
+         <!--<artifactId>activemq-all</artifactId> -->
+         <!--<version>5.9.0</version>-->
+    <!--</dependency>-->
+    <!--<dependency>  -->
+         <!--<groupId>org.apache.xbean</groupId>  -->
+         <!--<artifactId>xbean-spring</artifactId> -->
+         <!--<version>3.16</version>-->
+    <!--</dependency>-->
+
+      <!--<dependency>-->
+          <!--<groupId>com.rabbitmq</groupId>-->
+          <!--<artifactId>amqp-client</artifactId>-->
+          <!--<version>4.0.2</version>-->
+      <!--</dependency>-->
+
+      <!--<dependency>-->
+          <!--<groupId>org.springframework</groupId>-->
+          <!--<artifactId>spring-webmvc</artifactId>-->
+          <!--<version>4.3.20.RELEASE</version>-->
+      <!--</dependency>-->
+      <!--<dependency>-->
+          <!--<groupId>org.springframework.boot</groupId>-->
+          <!--<artifactId>spring-boot-autoconfigure</artifactId>-->
+          <!--<version>2.1.0.RELEASE</version>-->
+      <!--</dependency>-->
+      <!--<dependency>-->
+          <!--<groupId>org.springframework.boot</groupId>-->
+          <!--<artifactId>spring-boot-autoconfigure</artifactId>-->
+          <!--<version>2.1.0.RELEASE</version>-->
+      <!--</dependency>-->
   </dependencies>
 </project>
