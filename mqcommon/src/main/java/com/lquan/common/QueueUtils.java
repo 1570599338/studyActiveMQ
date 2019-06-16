@@ -11,4 +11,9 @@ package com.lquan.common;
  **/
 public class QueueUtils {
     public static  final  String queue_a="test";
+
+    /**
+     * 1、普通的工作队列模式
+     */
+    public static  final  String QUEUE_WORK_QUEUE="work.queue";
 }
